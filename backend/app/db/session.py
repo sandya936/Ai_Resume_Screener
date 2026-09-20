@@ -26,7 +26,25 @@ AsyncSessionLocal = async_sessionmaker(
 )
 
 
+_db_initialized = False
+
+
+async def init_db():
+    global _db_initialized
+    if not _db_initialized:
+        from app.db.base import Base
+        import app.db.models
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        _db_initialized = True
+
+
 async def get_db() -> AsyncGenerator[AsyncSession, None]:
+    if not _db_initialized:
+        try:
+            await init_db()
+        except Exception:
+            pass
     async with AsyncSessionLocal() as session:
         try:
             yield session
