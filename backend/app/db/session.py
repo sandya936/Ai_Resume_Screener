@@ -2,12 +2,18 @@ from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from app.core.config import settings
 
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql+asyncpg://", 1)
+elif db_url.startswith("postgresql://") and not db_url.startswith("postgresql+"):
+    db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
 engine_kwargs = {"echo": settings.ENVIRONMENT == "development", "future": True}
-if "sqlite" in settings.DATABASE_URL:
+if "sqlite" in db_url:
     engine_kwargs["connect_args"] = {"check_same_thread": False}
 
 engine = create_async_engine(
-    settings.DATABASE_URL,
+    db_url,
     **engine_kwargs
 )
 

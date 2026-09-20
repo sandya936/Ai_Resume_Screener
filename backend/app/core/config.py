@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     POSTGRES_PASSWORD: str = "agentx_secure_password"
     POSTGRES_DB: str = "agentx_db"
     DATABASE_URL: str = Field(
-        default="postgresql+asyncpg://agentx_admin:agentx_secure_password@localhost:5432/agentx_db"
+        default="sqlite+aiosqlite:///./app.db"
     )
 
     DEFAULT_LLM_PROVIDER: str = "gemini"
