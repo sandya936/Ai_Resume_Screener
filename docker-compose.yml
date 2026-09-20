@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: agentx_db
+    environment:
+      POSTGRES_DB: agentx_db
+      POSTGRES_USER: agentx_user
+      POSTGRES_PASSWORD: agentx_password_change_in_prod
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agentx_user -d agentx_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: agentx_backend
+    environment:
+      PROJECT_NAME: "AGENTX — Production-Ready AI Resume Intelligence Platform"
+      ENVIRONMENT: "production"
+      POSTGRES_SERVER: "db"
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: "agentx_user"
+      POSTGRES_PASSWORD: "agentx_password_change_in_prod"
+      POSTGRES_DB: "agentx_db"
+      DATABASE_URL: "postgresql+asyncpg://agentx_user:agentx_password_change_in_prod@db:5432/agentx_db"
+      SECRET_KEY: "prod_super_secret_jwt_key_change_me_before_deploying"
+      ACCESS_TOKEN_EXPIRE_MINUTES: 15
+      REFRESH_TOKEN_EXPIRE_DAYS: 7
+      LLM_PROVIDER: "mock"
+    ports:
+      - "8000:8000"
+    volumes:
+      - resume_uploads:/app/uploads/resumes
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: agentx_frontend
+    environment:
+      NODE_ENV: "production"
+      NEXT_PUBLIC_API_BASE_URL: "http://backend:8000/api/v1"
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  resume_uploads:

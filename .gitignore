@@ -1,0 +1,61 @@
+# Environment & Secrets
+.env
+.env.local
+.env.production
+*.env
+
+# Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Node & Frontend
+node_modules/
+.next/
+out/
+build/
+.pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log*
+.eslintcache
+
+# IDE & System
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Storage / Uploads
+uploads/*
+!uploads/.gitkeep
+tmp/*
+!tmp/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
