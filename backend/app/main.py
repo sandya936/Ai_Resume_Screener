@@ -90,10 +90,12 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 
 
 
+import traceback
+
 @app.exception_handler(Exception)
 async def unhandled_exception_handler(request: Request, exc: Exception):
     req_id = getattr(request.state, "request_id", "unknown")
-    logger.error(f"[RequestID: {req_id}] Unhandled internal exception: {str(exc)}")
+    logger.error(f"[RequestID: {req_id}] Unhandled internal exception: {str(exc)}\n{traceback.format_exc()}")
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
@@ -101,7 +103,7 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
             "data": None,
             "error": {
                 "code": "INTERNAL_SERVER_ERROR",
-                "message": "An internal server error occurred. Please contact system support with request ID.",
+                "message": f"Internal error: {str(exc)}",
                 "details": [{"request_id": req_id}],
             },
         },
