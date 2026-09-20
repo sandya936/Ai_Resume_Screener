@@ -20,5 +20,5 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
                 "img-src 'self' data: https://fastapi.tiangolo.com"
             )
         else:
-            response.headers["Content-Security-Policy"] = "default-src 'self'"
+            response.headers["Content-Security-Policy"] = "default-src 'self' https: http: data: blob:; connect-src *;"
         return response
