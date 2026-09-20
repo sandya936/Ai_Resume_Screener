@@ -224,47 +224,47 @@ export default function AGENTXProductionDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f4ee] text-[#2c221a] flex flex-col selection:bg-[#b83227] selection:text-white">
+    <div className="min-h-screen bg-[#ebdcc6] text-[#241810] flex flex-col selection:bg-[#8b1e16] selection:text-white">
       {/* Navbar Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#fcfaf5]/90 border-b border-[#e2d5c3] px-6 py-4 shadow-sm">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#e8dac5]/90 border-b border-[#caba9c] px-6 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#b83227] via-[#d4af37] to-[#8c7355] p-[1px] flex items-center justify-center shadow-md shadow-red-900/10">
-              <div className="w-full h-full bg-[#faf7f2] rounded-[11px] flex items-center justify-center">
-                <Bot className="w-5 h-5 text-[#b83227] animate-pulse" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8b1e16] via-[#d4af37] to-[#8c7355] p-[1px] flex items-center justify-center shadow-md shadow-red-950/20">
+              <div className="w-full h-full bg-[#f5ece0] rounded-[11px] flex items-center justify-center">
+                <Bot className="w-5 h-5 text-[#8b1e16] animate-pulse" />
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="font-extrabold text-xl tracking-tight text-[#2c221a]">
-                  AGENT<span className="text-[#b83227]">X</span>
+                <h1 className="font-extrabold text-xl tracking-tight text-[#241810]">
+                  AGENT<span className="text-[#8b1e16]">X</span>
                 </h1>
-                <span className="px-2.5 py-0.5 text-[10px] font-bold bg-emerald-100/80 text-emerald-800 border border-emerald-300 rounded-full flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping" />
+                <span className="px-2.5 py-0.5 text-[10px] font-bold bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6] rounded-full flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1c5427] animate-ping" />
                   Live Engine Active
                 </span>
               </div>
-              <p className="text-xs text-[#6b5a4b]">AI Resume Intelligence & Autonomous Career Platform</p>
+              <p className="text-xs text-[#6e5845]">AI Resume Intelligence & Autonomous Career Platform</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#f2ede4] border border-[#d8c8b0] text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-600" />
-              <span className="text-[#5c4936] font-semibold">FastAPI Service Online (Port 8000)</span>
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#dfcfb9] border border-[#c5b196] text-xs">
+              <span className="w-2 h-2 rounded-full bg-[#1c5427]" />
+              <span className="text-[#4e3d30] font-bold">FastAPI Service Online (Port 8000)</span>
             </div>
 
             {currentUser && (
-              <div className="flex items-center gap-2 bg-[#faf7f2] border border-[#d8c8b0] pl-3 pr-2 py-1.5 rounded-xl text-xs shadow-sm">
-                <User className="w-4 h-4 text-[#b83227]" />
-                <span className="font-semibold text-[#2c221a] hidden sm:inline">
+              <div className="flex items-center gap-2 bg-[#f5ece0] border border-[#caba9c] pl-3 pr-2 py-1.5 rounded-xl text-xs shadow-sm">
+                <User className="w-4 h-4 text-[#8b1e16]" />
+                <span className="font-bold text-[#241810] hidden sm:inline">
                   {currentUser.full_name || currentUser.email}
                 </span>
                 <button
                   type="button"
                   onClick={handleLogout}
                   title="Sign Out of Workspace"
-                  className="flex items-center gap-1.5 px-2.5 py-1 bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 rounded-lg transition-all text-xs font-semibold ml-1 cursor-pointer"
+                  className="flex items-center gap-1.5 px-2.5 py-1 bg-[#f5dcd8] hover:bg-[#ebd0cc] text-[#8b1e16] border border-[#e8b5ae] rounded-lg transition-all text-xs font-bold ml-1 cursor-pointer"
                 >
                   <LogOut className="w-3.5 h-3.5" />
                   <span>Logout</span>
@@ -278,35 +278,35 @@ export default function AGENTXProductionDashboard() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 space-y-8">
         
-        {/* Hero Banner Section with Warm Crimson & Gold Texture */}
-        <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#801c13] via-[#a32a1e] to-[#4a3b2c] border border-[#d4af37]/40 p-6 sm:p-8 shadow-xl text-white">
+        {/* Hero Banner Section with Rich Deep Crimson & Gold Texture */}
+        <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#5e120b] via-[#851c14] to-[#3d2014] border border-[#d4af37]/60 p-6 sm:p-8 shadow-xl text-white">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#d4af37]/20 border border-[#d4af37]/40 text-[#fef3c7] text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#d4af37]/20 border border-[#d4af37]/50 text-[#fef3c7] text-xs font-bold shadow-sm">
                 <Sparkles className="w-4 h-4 text-[#fde68a]" />
                 6-Agent Autonomous Architecture
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 Transform Resumes into Explainable <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#fef3c7] via-[#fde68a] to-[#ffffff]">Career Intelligence</span>
               </h2>
-              <p className="text-[#f5ead6] text-xs sm:text-sm leading-relaxed">
-                Execute 60% Deterministic + 40% AI Auditor scoring, canonical skill synonym normalization (<code className="bg-[#5c1611] text-[#fde68a] px-1.5 py-0.5 rounded border border-[#d4af37]/30">K8s</code> → <code className="bg-[#5c1611] text-[#fde68a] px-1.5 py-0.5 rounded border border-[#d4af37]/30">kubernetes</code>), 5-category job fit formulas, and 40 dynamic STAR practice questions.
+              <p className="text-[#f5ead6] text-xs sm:text-sm leading-relaxed font-medium">
+                Execute 60% Deterministic + 40% AI Auditor scoring, canonical skill synonym normalization (<code className="bg-[#420a05] text-[#fde68a] px-1.5 py-0.5 rounded border border-[#d4af37]/40">K8s</code> → <code className="bg-[#420a05] text-[#fde68a] px-1.5 py-0.5 rounded border border-[#d4af37]/40">kubernetes</code>), 5-category job fit formulas, and 40 dynamic STAR practice questions.
               </p>
               
               <div className="pt-2 flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#300a06]/90 border border-[#d4af37]/30 text-xs text-[#fde68a] font-semibold">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
                   Anti-Prompt Injection Guardrails
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300">
-                  <BrainCircuit className="w-4 h-4 text-purple-400" />
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#300a06]/90 border border-[#d4af37]/30 text-xs text-[#fde68a] font-semibold">
+                  <BrainCircuit className="w-4 h-4 text-purple-300" />
                   40 Dynamic Interview Questions
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-indigo-500/30 shadow-2xl group glass-card">
+              <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/50 shadow-2xl group glass-card">
                 <Image
                   src="/ai_resume_hero.jpg"
                   alt="AI Resume Platform"
@@ -315,24 +315,24 @@ export default function AGENTXProductionDashboard() {
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050711] via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2e0906] via-transparent to-transparent opacity-50" />
               </div>
             </div>
           </div>
         </section>
 
         {/* Live Execution Control Center Section */}
-        <section className="rounded-3xl parchment-card p-6 sm:p-8 space-y-6 shadow-md border border-[#e2d5c3]">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#e2d5c3] pb-6">
+        <section className="rounded-3xl parchment-card p-6 sm:p-8 space-y-6 shadow-lg border border-[#caba9c]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#caba9c] pb-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f2ede4] border border-[#d8c8b0] text-[#9e2419] text-xs font-semibold mb-2">
-                <Zap className="w-3.5 h-3.5 text-[#b83227]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e6d7c3] border border-[#caaf90] text-[#8b1e16] text-xs font-bold mb-2">
+                <Zap className="w-3.5 h-3.5 text-[#8b1e16]" />
                 Live Control Center
               </div>
-              <h3 className="text-2xl font-extrabold text-[#2c221a] tracking-tight">
+              <h3 className="text-2xl font-extrabold text-[#241810] tracking-tight">
                 Candidate Document & Job Description Ingestion
               </h3>
-              <p className="text-xs sm:text-sm text-[#6b5a4b] mt-1">
+              <p className="text-xs sm:text-sm text-[#6e5845] mt-1 font-medium">
                 Upload candidate resume credentials and input target position requirements to run end-to-end analysis.
               </p>
             </div>
@@ -340,7 +340,7 @@ export default function AGENTXProductionDashboard() {
             <button
               onClick={runLivePipeline}
               disabled={isProcessing}
-              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#b83227] via-[#9e2419] to-[#d4af37] text-white font-bold text-sm shadow-lg shadow-red-900/15 hover:shadow-red-900/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#8b1e16] via-[#a3241b] to-[#c99a2e] text-white font-extrabold text-sm shadow-lg shadow-red-950/25 hover:shadow-red-950/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shrink-0 cursor-pointer"
             >
               {isProcessing ? (
                 <>
@@ -358,17 +358,17 @@ export default function AGENTXProductionDashboard() {
 
           {/* Live Progress Step Indicator */}
           {isProcessing && (
-            <div className="p-4 rounded-xl bg-[#fee2e2]/60 border border-[#f5b5b0] space-y-2 animate-pulse">
-              <div className="flex items-center gap-3 text-xs text-[#9e2419] font-semibold">
-                <Activity className="w-4 h-4 animate-spin text-[#b83227]" />
+            <div className="p-4 rounded-xl bg-[#f5dcd8] border border-[#e8b5ae] space-y-2 animate-pulse">
+              <div className="flex items-center gap-3 text-xs text-[#8b1e16] font-bold">
+                <Activity className="w-4 h-4 animate-spin text-[#8b1e16]" />
                 <span>{currentStep}</span>
               </div>
             </div>
           )}
 
           {errorMessage && (
-            <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-red-800 text-xs font-medium">
-              <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+            <div className="p-4 rounded-xl bg-red-100 border border-red-300 flex items-start gap-3 text-red-900 text-xs font-semibold">
+              <AlertCircle className="w-4 h-4 text-red-700 shrink-0 mt-0.5" />
               <span>{errorMessage}</span>
             </div>
           )}
@@ -377,14 +377,14 @@ export default function AGENTXProductionDashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             {/* Column 1: Candidate Resume Upload */}
-            <div className="p-6 rounded-2xl bg-[#faf7f2] border border-[#e2d5c3] space-y-4 flex flex-col justify-between shadow-sm">
+            <div className="p-6 rounded-2xl bg-[#ede2d2] border border-[#caba9c] space-y-4 flex flex-col justify-between shadow-sm">
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2 font-bold text-sm text-[#2c221a]">
-                    <FileText className="w-4 h-4 text-[#b83227]" />
+                  <div className="flex items-center gap-2 font-extrabold text-sm text-[#241810]">
+                    <FileText className="w-4 h-4 text-[#8b1e16]" />
                     Step 1: Upload Candidate Resume
                   </div>
-                  <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#f2ede4] text-[#8c7355] border border-[#d8c8b0]">
+                  <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-[#dfcfb9] text-[#5c4735] border border-[#caaf90]">
                     PDF / DOCX
                   </span>
                 </div>
@@ -392,7 +392,7 @@ export default function AGENTXProductionDashboard() {
                 <div
                   onDragOver={(e) => e.preventDefault()}
                   onDrop={handleFileDrop}
-                  className="border-2 border-dashed border-[#c8bba8] hover:border-[#b83227] rounded-xl p-6 text-center transition-all bg-[#f7f4ee]/80 hover:bg-[#f2ede4] cursor-pointer group"
+                  className="border-2 border-dashed border-[#b8a58c] hover:border-[#8b1e16] rounded-xl p-6 text-center transition-all bg-[#f5ece0] hover:bg-[#ebdcc6] cursor-pointer group shadow-inner"
                 >
                   <input
                     type="file"
@@ -402,24 +402,24 @@ export default function AGENTXProductionDashboard() {
                     id="resume-upload-input"
                   />
                   <label htmlFor="resume-upload-input" className="cursor-pointer space-y-2 block">
-                    <div className="w-12 h-12 rounded-xl bg-[#fee2e2]/60 border border-[#f5b5b0] flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                      <Upload className="w-6 h-6 text-[#b83227]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#f5dcd8] border border-[#e8b5ae] flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                      <Upload className="w-6 h-6 text-[#8b1e16]" />
                     </div>
                     {selectedFile ? (
                       <div>
-                        <p className="font-bold text-sm text-emerald-800 flex items-center justify-center gap-1.5">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600" /> {selectedFile.name}
+                        <p className="font-extrabold text-sm text-[#1c5427] flex items-center justify-center gap-1.5">
+                          <CheckCircle2 className="w-4 h-4 text-[#1c5427]" /> {selectedFile.name}
                         </p>
-                        <p className="text-[11px] text-[#6b5a4b]">
+                        <p className="text-[11px] text-[#6e5845] font-semibold">
                           {(selectedFile.size / 1024).toFixed(1)} KB — Ready for extraction
                         </p>
                       </div>
                     ) : (
                       <div>
-                        <p className="font-semibold text-xs text-[#2c221a]">
-                          Drag & drop resume file here, or <span className="text-[#b83227] underline">browse</span>
+                        <p className="font-bold text-xs text-[#241810]">
+                          Drag & drop resume file here, or <span className="text-[#8b1e16] underline">browse</span>
                         </p>
-                        <p className="text-[11px] text-[#6b5a4b] mt-1">
+                        <p className="text-[11px] text-[#6e5845] mt-1">
                           Magic Bytes verified (%PDF-, PK\x03\x04). Max 10MB limit.
                         </p>
                       </div>
@@ -428,11 +428,11 @@ export default function AGENTXProductionDashboard() {
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-[#e2d5c3] flex items-center justify-between text-xs">
-                <span className="text-[#6b5a4b]">No file on hand? Use sample credentials:</span>
+              <div className="pt-3 border-t border-[#caba9c] flex items-center justify-between text-xs">
+                <span className="text-[#6e5845] font-semibold">No file on hand? Use sample credentials:</span>
                 <button
                   onClick={() => setSelectedFile(null)}
-                  className="px-3 py-1.5 rounded-lg bg-[#f2ede4] hover:bg-[#e8decb] text-[#5c4936] border border-[#d8c8b0] font-semibold transition"
+                  className="px-3 py-1.5 rounded-lg bg-[#dfcfb9] hover:bg-[#d4c3ab] text-[#4e3d30] border border-[#c5b196] font-extrabold transition shadow-sm cursor-pointer"
                 >
                   Use Sample Candidate Resume
                 </button>
@@ -440,25 +440,25 @@ export default function AGENTXProductionDashboard() {
             </div>
 
             {/* Column 2: Target Position & Job Description */}
-            <div className="p-6 rounded-2xl bg-[#faf7f2] border border-[#e2d5c3] space-y-4 shadow-sm">
+            <div className="p-6 rounded-2xl bg-[#ede2d2] border border-[#caba9c] space-y-4 shadow-sm">
               <div className="flex items-center justify-between mb-1">
-                <div className="flex items-center gap-2 font-bold text-sm text-[#2c221a]">
+                <div className="flex items-center gap-2 font-extrabold text-sm text-[#241810]">
                   <Target className="w-4 h-4 text-[#8c7355]" />
                   Step 2: Target Position & Job Description
                 </div>
-                <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#f2ede4] text-[#8c7355] border border-[#d8c8b0]">
+                <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-[#dfcfb9] text-[#5c4735] border border-[#caaf90]">
                   Target JD
                 </span>
               </div>
 
               {/* Quick Presets */}
               <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                <span className="text-[11px] text-[#6b5a4b] font-medium shrink-0">Quick Presets:</span>
+                <span className="text-[11px] text-[#6e5845] font-bold shrink-0">Quick Presets:</span>
                 {PRESET_JDS.map((preset, idx) => (
                   <button
                     key={idx}
                     onClick={() => applyPresetJD(preset)}
-                    className="px-2.5 py-1 rounded-lg bg-[#ffffff] hover:bg-[#f2ede4] text-[#3d3126] border border-[#d8c8b0] text-[11px] font-semibold transition shrink-0 shadow-sm"
+                    className="px-2.5 py-1 rounded-lg bg-[#f8f3ea] hover:bg-[#e4d6c1] text-[#241810] border border-[#caba9c] text-[11px] font-bold transition shrink-0 shadow-sm cursor-pointer"
                   >
                     {preset.label}
                   </button>
@@ -471,7 +471,7 @@ export default function AGENTXProductionDashboard() {
                   placeholder="Target Role Title (e.g., Junior Data Analyst, Software Engineer)"
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#ffffff] border border-[#d8c8b0] text-xs text-[#2c221a] placeholder:text-[#a0907c] focus:outline-none focus:border-[#b83227] transition"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#faf6f0] border border-[#caba9c] text-xs text-[#241810] font-semibold placeholder:text-[#8e7960] focus:outline-none focus:border-[#8b1e16] transition shadow-inner"
                 />
 
                 <textarea
@@ -479,7 +479,7 @@ export default function AGENTXProductionDashboard() {
                   placeholder="Paste Job Description requirements (e.g. required skills like Python, Power BI, SQL, Excel, communication)..."
                   value={jobDescription}
                   onChange={(e) => setJobDescription(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#ffffff] border border-[#d8c8b0] text-xs text-[#2c221a] placeholder:text-[#a0907c] focus:outline-none focus:border-[#b83227] transition resize-none"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#faf6f0] border border-[#caba9c] text-xs text-[#241810] font-semibold placeholder:text-[#8e7960] focus:outline-none focus:border-[#8b1e16] transition resize-none shadow-inner"
                 />
               </div>
             </div>
@@ -489,63 +489,63 @@ export default function AGENTXProductionDashboard() {
 
         {/* Tab Navigation Menu */}
         <section className="space-y-6">
-          <div className="flex items-center gap-2 border-b border-[#e2d5c3] overflow-x-auto pb-1">
+          <div className="flex items-center gap-2 border-b-2 border-[#caba9c] overflow-x-auto pb-1">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 cursor-pointer ${
                 activeTab === 'overview'
-                  ? 'border-[#b83227] text-[#b83227] bg-[#fee2e2]/60'
-                  : 'border-transparent text-[#6b5a4b] hover:text-[#2c221a]'
+                  ? 'bg-[#8b1e16] text-white border-[#d4af37] shadow-md'
+                  : 'text-[#6e5845] hover:text-[#241810] hover:bg-[#e4d6c1]'
               }`}
             >
               <Activity className="w-4 h-4" /> Execution Summary
             </button>
             <button
               onClick={() => setActiveTab('ats')}
-              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 cursor-pointer ${
                 activeTab === 'ats'
-                  ? 'border-emerald-700 text-emerald-800 bg-emerald-100/60'
-                  : 'border-transparent text-[#6b5a4b] hover:text-[#2c221a]'
+                  ? 'bg-[#8b1e16] text-white border-[#d4af37] shadow-md'
+                  : 'text-[#6e5845] hover:text-[#241810] hover:bg-[#e4d6c1]'
               }`}
             >
               <FileCheck className="w-4 h-4" /> ATS Scoring ({executionResult?.atsData?.overall_score ?? '--'}%)
             </button>
             <button
               onClick={() => setActiveTab('match')}
-              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 cursor-pointer ${
                 activeTab === 'match'
-                  ? 'border-[#8c7355] text-[#5c4936] bg-[#f2ede4]'
-                  : 'border-transparent text-[#6b5a4b] hover:text-[#2c221a]'
+                  ? 'bg-[#8b1e16] text-white border-[#d4af37] shadow-md'
+                  : 'text-[#6e5845] hover:text-[#241810] hover:bg-[#e4d6c1]'
               }`}
             >
               <Target className="w-4 h-4" /> Job Match ({executionResult?.matchData?.overall_match_score ?? '--'}%)
             </button>
             <button
               onClick={() => setActiveTab('roadmap')}
-              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 cursor-pointer ${
                 activeTab === 'roadmap'
-                  ? 'border-[#b83227] text-[#b83227] bg-[#fee2e2]/60'
-                  : 'border-transparent text-[#6b5a4b] hover:text-[#2c221a]'
+                  ? 'bg-[#8b1e16] text-white border-[#d4af37] shadow-md'
+                  : 'text-[#6e5845] hover:text-[#241810] hover:bg-[#e4d6c1]'
               }`}
             >
               <Compass className="w-4 h-4" /> 30-Day Roadmap
             </button>
             <button
               onClick={() => setActiveTab('interview')}
-              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 cursor-pointer ${
                 activeTab === 'interview'
-                  ? 'border-[#b83227] text-[#b83227] bg-[#fee2e2]/60'
-                  : 'border-transparent text-[#6b5a4b] hover:text-[#2c221a]'
+                  ? 'bg-[#8b1e16] text-white border-[#d4af37] shadow-md'
+                  : 'text-[#6e5845] hover:text-[#241810] hover:bg-[#e4d6c1]'
               }`}
             >
               <MessageSquare className="w-4 h-4" /> STAR Practice Studio (40 Questions)
             </button>
             <button
               onClick={() => setActiveTab('agents')}
-              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-3 font-extrabold text-xs rounded-t-xl transition-all border-b-2 shrink-0 cursor-pointer ${
                 activeTab === 'agents'
-                  ? 'border-[#8c7355] text-[#5c4936] bg-[#f2ede4]'
-                  : 'border-transparent text-[#6b5a4b] hover:text-[#2c221a]'
+                  ? 'bg-[#8b1e16] text-white border-[#d4af37] shadow-md'
+                  : 'text-[#6e5845] hover:text-[#241810] hover:bg-[#e4d6c1]'
               }`}
             >
               <Bot className="w-4 h-4" /> Agent Execution Trace
@@ -560,62 +560,62 @@ export default function AGENTXProductionDashboard() {
               <div className="space-y-6">
                 {/* Metric Summary Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2">
-                    <div className="flex items-center justify-between text-xs text-[#6b5a4b]">
-                      <span className="font-semibold text-[#2c221a]">ATS Structure Grade</span>
-                      <Award className="w-4 h-4 text-emerald-700" />
+                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2 border border-[#d4c2a8] shadow-md">
+                    <div className="flex items-center justify-between text-xs text-[#5c4735]">
+                      <span className="font-extrabold text-[#241810]">ATS Structure Grade</span>
+                      <Award className="w-4 h-4 text-[#1c5427]" />
                     </div>
-                    <div className="text-3xl font-black text-[#2c221a]">
+                    <div className="text-3xl font-black text-[#8b1e16]">
                       {executionResult?.atsData?.overall_score !== undefined
                         ? `${executionResult.atsData.overall_score}%`
                         : 'N/A'}
                     </div>
-                    <p className="text-[11px] text-[#6b5a4b]">Formatting & Quality (Job-Independent)</p>
+                    <p className="text-[11px] text-[#6e5845] font-semibold">Formatting & Quality (Job-Independent)</p>
                   </div>
 
-                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2">
-                    <div className="flex items-center justify-between text-xs text-[#6b5a4b]">
-                      <span className="font-semibold text-[#2c221a]">Job Skill Alignment</span>
-                      <Target className="w-4 h-4 text-[#b83227]" />
+                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2 border border-[#d4c2a8] shadow-md">
+                    <div className="flex items-center justify-between text-xs text-[#5c4735]">
+                      <span className="font-extrabold text-[#241810]">Job Skill Alignment</span>
+                      <Target className="w-4 h-4 text-[#8b1e16]" />
                     </div>
-                    <div className="text-3xl font-black text-[#2c221a]">
+                    <div className="text-3xl font-black text-[#8b1e16]">
                       {executionResult?.matchData?.overall_match_score !== undefined
                         ? `${executionResult.matchData.overall_match_score}%`
                         : 'N/A'}
                     </div>
-                    <p className="text-[11px] text-[#6b5a4b]">Position Tech Fit (Job-Specific)</p>
+                    <p className="text-[11px] text-[#6e5845] font-semibold">Position Tech Fit (Job-Specific)</p>
                   </div>
 
-                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2">
-                    <div className="flex items-center justify-between text-xs text-[#6b5a4b]">
-                      <span className="font-semibold text-[#2c221a]">Matched Skills</span>
-                      <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2 border border-[#d4c2a8] shadow-md">
+                    <div className="flex items-center justify-between text-xs text-[#5c4735]">
+                      <span className="font-extrabold text-[#241810]">Matched Skills</span>
+                      <CheckCircle2 className="w-4 h-4 text-[#1c5427]" />
                     </div>
-                    <div className="text-3xl font-black text-[#2c221a]">
+                    <div className="text-3xl font-black text-[#8b1e16]">
                       {executionResult?.matchData?.matched_skills?.length ?? 0}
                     </div>
-                    <p className="text-[11px] text-[#6b5a4b]">Normalized synonym matches</p>
+                    <p className="text-[11px] text-[#6e5845] font-semibold">Normalized synonym matches</p>
                   </div>
 
-                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2">
-                    <div className="flex items-center justify-between text-xs text-[#6b5a4b]">
-                      <span className="font-semibold text-[#2c221a]">Practice Questions</span>
+                  <div className="p-5 rounded-2xl parchment-card parchment-card-hover space-y-2 border border-[#d4c2a8] shadow-md">
+                    <div className="flex items-center justify-between text-xs text-[#5c4735]">
+                      <span className="font-extrabold text-[#241810]">Practice Questions</span>
                       <MessageSquare className="w-4 h-4 text-[#8c7355]" />
                     </div>
-                    <div className="text-3xl font-black text-[#2c221a]">
+                    <div className="text-3xl font-black text-[#8b1e16]">
                       {executionResult?.interviewData?.length ?? 40}
                     </div>
-                    <p className="text-[11px] text-[#6b5a4b]">Top 20 Resume + Top 20 HR</p>
+                    <p className="text-[11px] text-[#6e5845] font-semibold">Top 20 Resume + Top 20 HR</p>
                   </div>
                 </div>
 
                 {/* Executive Action Plan Summary */}
                 {executionResult?.orchestrationData?.final_action_plan && (
-                  <div className="p-6 rounded-2xl bg-[#faf7f2] border border-[#e2d5c3] shadow-sm space-y-3">
-                    <div className="flex items-center gap-2 font-bold text-sm text-[#b83227]">
+                  <div className="p-6 rounded-2xl bg-[#ede2d2] border border-[#caba9c] shadow-md space-y-3">
+                    <div className="flex items-center gap-2 font-extrabold text-sm text-[#8b1e16]">
                       <Sparkles className="w-4 h-4 text-[#d4af37]" /> Orchestrator Executive Summary
                     </div>
-                    <p className="text-xs sm:text-sm text-[#2c221a] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#241810] font-medium leading-relaxed">
                       {executionResult.orchestrationData.final_action_plan.executive_summary}
                     </p>
                   </div>
@@ -625,61 +625,61 @@ export default function AGENTXProductionDashboard() {
 
             {/* TAB 2: ATS SCORING */}
             {activeTab === 'ats' && (
-              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#e2d5c3]">
-                <div className="flex items-center justify-between border-b border-[#e2d5c3] pb-4">
+              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#caba9c]">
+                <div className="flex items-center justify-between border-b border-[#caba9c] pb-4">
                   <div>
-                    <h3 className="font-bold text-lg text-[#2c221a]">ATS Compatibility Report</h3>
-                    <p className="text-xs text-[#6b5a4b]">Calculated by FastAPI ATSAnalyzerService</p>
+                    <h3 className="font-extrabold text-lg text-[#241810]">ATS Compatibility Report</h3>
+                    <p className="text-xs text-[#6e5845]">Calculated by FastAPI ATSAnalyzerService</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-black text-emerald-800">
+                    <div className="text-3xl font-black text-[#1c5427]">
                       {executionResult?.atsData?.overall_score !== undefined
                         ? `${executionResult.atsData.overall_score} / 100`
                         : 'N/A'}
                     </div>
-                    <div className="text-xs text-[#6b5a4b]">Overall ATS Grade</div>
+                    <div className="text-xs text-[#6e5845] font-bold">Overall ATS Grade</div>
                   </div>
                 </div>
 
                 {executionResult?.atsData ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="p-5 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-3">
-                      <div className="flex items-center gap-2 font-bold text-xs text-emerald-900">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-700" /> Verified Resume Strengths
+                    <div className="p-5 rounded-xl bg-[#dcecd8] border border-[#a8d4a6] space-y-3 shadow-sm">
+                      <div className="flex items-center gap-2 font-extrabold text-xs text-[#1c5427]">
+                        <CheckCircle2 className="w-4 h-4 text-[#1c5427]" /> Verified Resume Strengths
                       </div>
-                      <ul className="space-y-2 text-xs text-[#2c221a]">
+                      <ul className="space-y-2 text-xs text-[#1c5427] font-semibold">
                         {executionResult.atsData.strengths && executionResult.atsData.strengths.length > 0 ? (
                           executionResult.atsData.strengths.map((s: string, idx: number) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <span className="text-emerald-700 mt-0.5">•</span> <span>{s}</span>
+                              <span className="text-[#1c5427] mt-0.5">•</span> <span>{s}</span>
                             </li>
                           ))
                         ) : (
-                          <li className="text-[#6b5a4b] italic">No verified strengths flagged.</li>
+                          <li className="text-[#6e5845] italic">No verified strengths flagged.</li>
                         )}
                       </ul>
                     </div>
 
-                    <div className="p-5 rounded-xl bg-[#fee2e2]/60 border border-[#f5b5b0] space-y-3">
-                      <div className="flex items-center gap-2 font-bold text-xs text-[#9e2419]">
-                        <Sparkles className="w-4 h-4 text-[#b83227]" /> Actionable Improvements
+                    <div className="p-5 rounded-xl bg-[#f5dcd8] border border-[#e8b5ae] space-y-3 shadow-sm">
+                      <div className="flex items-center gap-2 font-extrabold text-xs text-[#8b1e16]">
+                        <Sparkles className="w-4 h-4 text-[#8b1e16]" /> Actionable Improvements
                       </div>
-                      <ul className="space-y-2 text-xs text-[#2c221a]">
+                      <ul className="space-y-2 text-xs text-[#8b1e16] font-semibold">
                         {executionResult.atsData.actionable_improvements && executionResult.atsData.actionable_improvements.length > 0 ? (
                           executionResult.atsData.actionable_improvements.map((imp: string, idx: number) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <span className="text-[#b83227] mt-0.5">•</span> <span>{imp}</span>
+                              <span className="text-[#8b1e16] mt-0.5">•</span> <span>{imp}</span>
                             </li>
                           ))
                         ) : (
-                          <li className="text-[#6b5a4b] italic">No high-priority improvements required.</li>
+                          <li className="text-[#6e5845] italic">No high-priority improvements required.</li>
                         )}
                       </ul>
                     </div>
                   </div>
                 ) : (
-                  <div className="text-center py-12 text-[#6b5a4b] text-sm">
-                    No ATS score generated yet. Click <span className="text-[#b83227] font-semibold">"Run AI Analysis & Autonomous Pipeline"</span> above to calculate 60% Deterministic + 40% AI Auditor score.
+                  <div className="text-center py-12 text-[#6e5845] text-sm font-semibold">
+                    No ATS score generated yet. Click <span className="text-[#8b1e16] font-extrabold">"Run AI Analysis & Autonomous Pipeline"</span> above to calculate 60% Deterministic + 40% AI Auditor score.
                   </div>
                 )}
               </div>
@@ -687,64 +687,64 @@ export default function AGENTXProductionDashboard() {
 
             {/* TAB 3: JOB MATCH */}
             {activeTab === 'match' && (
-              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#e2d5c3]">
-                <div className="flex items-center justify-between border-b border-[#e2d5c3] pb-4">
+              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#caba9c]">
+                <div className="flex items-center justify-between border-b border-[#caba9c] pb-4">
                   <div>
-                    <h3 className="font-bold text-lg text-[#2c221a]">5-Category Job Fit Analysis</h3>
-                    <p className="text-xs text-[#6b5a4b]">Target Position: {jobTitle || 'Target Position'}</p>
+                    <h3 className="font-extrabold text-lg text-[#241810]">5-Category Job Fit Analysis</h3>
+                    <p className="text-xs text-[#6e5845]">Target Position: {jobTitle || 'Target Position'}</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-black text-[#b83227]">
+                    <div className="text-3xl font-black text-[#8b1e16]">
                       {executionResult?.matchData?.overall_match_score !== undefined
                         ? `${executionResult.matchData.overall_match_score}%`
                         : 'N/A'}
                     </div>
-                    <div className="text-xs text-[#6b5a4b]">Overall Alignment Score</div>
+                    <div className="text-xs text-[#6e5845] font-bold">Overall Alignment Score</div>
                   </div>
                 </div>
 
                 {executionResult?.matchData ? (
                   <div className="space-y-6">
-                    <div className="p-4 rounded-xl bg-[#f2ede4] border border-[#d8c8b0] text-xs text-[#2c221a] flex items-start gap-3">
-                      <Sparkles className="w-4 h-4 text-[#b83227] shrink-0 mt-0.5" />
+                    <div className="p-4 rounded-xl bg-[#dfcfb9] border border-[#c5b196] text-xs text-[#241810] font-semibold flex items-start gap-3 shadow-inner">
+                      <Sparkles className="w-4 h-4 text-[#8b1e16] shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-bold text-[#b83227]">Understanding Job Alignment vs ATS Grade:</span> ATS Compatibility evaluates document structure, contact details, and verb density (Job-Independent). Job Skill Alignment measures your specific technical fit against <span className="font-semibold text-[#2c221a]">{jobTitle || 'the target job description'}</span>.
+                        <span className="font-extrabold text-[#8b1e16]">Understanding Job Alignment vs ATS Grade:</span> ATS Compatibility evaluates document structure, contact details, and verb density (Job-Independent). Job Skill Alignment measures your specific technical fit against <span className="font-extrabold text-[#241810]">{jobTitle || 'the target job description'}</span>.
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Matched Skills */}
-                    <div className="p-5 rounded-xl bg-[#faf7f2] border border-[#e2d5c3] space-y-3">
-                      <div className="font-bold text-xs text-emerald-800 flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-700" /> Matched Required Skills
+                    <div className="p-5 rounded-xl bg-[#ede2d2] border border-[#caba9c] space-y-3 shadow-sm">
+                      <div className="font-extrabold text-xs text-[#1c5427] flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-[#1c5427]" /> Matched Required Skills
                       </div>
                       <div className="flex flex-wrap gap-2 pt-1">
                         {executionResult.matchData.matched_skills && executionResult.matchData.matched_skills.length > 0 ? (
                           executionResult.matchData.matched_skills.map((skill: string, idx: number) => (
-                            <span key={idx} className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-semibold">
+                            <span key={idx} className="px-2.5 py-1 rounded-lg bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6] text-xs font-bold shadow-sm">
                               {skill}
                             </span>
                           ))
                         ) : (
-                          <span className="text-xs text-[#6b5a4b] italic">No direct technical skill matches found.</span>
+                          <span className="text-xs text-[#6e5845] italic">No direct technical skill matches found.</span>
                         )}
                       </div>
                     </div>
 
                     {/* Missing Skills */}
-                    <div className="p-5 rounded-xl bg-[#faf7f2] border border-[#e2d5c3] space-y-3">
-                      <div className="font-bold text-xs text-rose-800 flex items-center gap-2">
-                        <XCircle className="w-4 h-4 text-rose-700" /> Missing Required Skills
+                    <div className="p-5 rounded-xl bg-[#ede2d2] border border-[#caba9c] space-y-3 shadow-sm">
+                      <div className="font-extrabold text-xs text-[#8b1e16] flex items-center gap-2">
+                        <XCircle className="w-4 h-4 text-[#8b1e16]" /> Missing Required Skills
                       </div>
                       <div className="flex flex-wrap gap-2 pt-1">
                         {(executionResult.matchData.missing_skills || executionResult.matchData.missing_required_skills) && (executionResult.matchData.missing_skills || executionResult.matchData.missing_required_skills).length > 0 ? (
                           (executionResult.matchData.missing_skills || executionResult.matchData.missing_required_skills).map((skill: string, idx: number) => (
-                            <span key={idx} className="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-900 border border-rose-300 text-xs font-semibold capitalize">
+                            <span key={idx} className="px-2.5 py-1 rounded-lg bg-[#f5dcd8] text-[#8b1e16] border border-[#e8b5ae] text-xs font-bold capitalize shadow-sm">
                               {skill}
                             </span>
                           ))
                         ) : (
-                          <span className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-semibold">
+                          <span className="px-2.5 py-1 rounded-lg bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6] text-xs font-bold shadow-sm">
                             ✓ None (All required skills present in candidate resume!)
                           </span>
                         )}
@@ -753,8 +753,8 @@ export default function AGENTXProductionDashboard() {
                   </div>
                 </div>
                 ) : (
-                  <div className="text-center py-12 text-[#6b5a4b] text-sm">
-                    No job match analysis performed yet. Click <span className="text-[#b83227] font-semibold">"Run AI Analysis & Autonomous Pipeline"</span> above to analyze candidate fit against your job description.
+                  <div className="text-center py-12 text-[#6e5845] text-sm font-semibold">
+                    No job match analysis performed yet. Click <span className="text-[#8b1e16] font-extrabold">"Run AI Analysis & Autonomous Pipeline"</span> above to analyze candidate fit against your job description.
                   </div>
                 )}
               </div>
@@ -762,13 +762,13 @@ export default function AGENTXProductionDashboard() {
 
             {/* TAB 4: ROADMAP */}
             {activeTab === 'roadmap' && (
-              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#e2d5c3]">
-                <div className="flex items-center justify-between border-b border-[#e2d5c3] pb-4">
+              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#caba9c]">
+                <div className="flex items-center justify-between border-b border-[#caba9c] pb-4">
                   <div>
-                    <h3 className="font-bold text-lg text-[#2c221a]">30-Day Skill Gap Learning Roadmap</h3>
-                    <p className="text-xs text-[#6b5a4b]">Prioritized milestones adhering strictly to Anti-Fabrication rules</p>
+                    <h3 className="font-extrabold text-lg text-[#241810]">30-Day Skill Gap Learning Roadmap</h3>
+                    <p className="text-xs text-[#6e5845]">Prioritized milestones adhering strictly to Anti-Fabrication rules</p>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#f2ede4] text-[#8c7355] border border-[#d8c8b0] text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-[#dfcfb9] text-[#4e3d30] border border-[#c5b196] text-xs font-bold shadow-sm">
                     Anti-Fabrication Guardrail Active
                   </span>
                 </div>
@@ -778,20 +778,20 @@ export default function AGENTXProductionDashboard() {
                     {/* Identified Skill Gaps */}
                     {executionResult.careerData.skill_gaps && executionResult.careerData.skill_gaps.length > 0 && (
                       <div className="space-y-3">
-                        <h4 className="font-bold text-xs text-[#6b5a4b] uppercase tracking-wider">Identified Skill Gaps</h4>
+                        <h4 className="font-extrabold text-xs text-[#6e5845] uppercase tracking-wider">Identified Skill Gaps</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {executionResult.careerData.skill_gaps.map((gap: any, idx: number) => (
-                            <div key={idx} className="p-4 rounded-xl bg-[#faf7f2] border border-[#e2d5c3] space-y-2 shadow-sm">
+                            <div key={idx} className="p-4 rounded-xl bg-[#ede2d2] border border-[#caba9c] space-y-2 shadow-sm">
                               <div className="flex items-center justify-between">
-                                <span className="font-bold text-sm text-[#2c221a]">{gap.skill_name}</span>
+                                <span className="font-extrabold text-sm text-[#241810]">{gap.skill_name}</span>
                                 <span className={`px-2 py-0.5 rounded text-[10px] font-extrabold uppercase ${
-                                  gap.priority === 'critical' ? 'bg-rose-100 text-rose-800 border border-rose-300' : 'bg-amber-100 text-amber-800 border border-amber-300'
+                                  gap.priority === 'critical' ? 'bg-[#f5dcd8] text-[#8b1e16] border border-[#e8b5ae]' : 'bg-[#fce8cc] text-[#8a5314] border border-[#ebd0aa]'
                                 }`}>
                                   {gap.priority || 'medium'}
                                 </span>
                               </div>
-                              <p className="text-xs text-[#6b5a4b]">{gap.reason}</p>
-                              <div className="text-[11px] text-[#b83227] font-semibold">Learning Effort: {gap.learning_effort}</div>
+                              <p className="text-xs text-[#6e5845] font-medium">{gap.reason}</p>
+                              <div className="text-[11px] text-[#8b1e16] font-bold">Learning Effort: {gap.learning_effort}</div>
                             </div>
                           ))}
                         </div>
@@ -801,19 +801,19 @@ export default function AGENTXProductionDashboard() {
                     {/* 30-Day Plan Milestones */}
                     {executionResult.careerData.learning_roadmap?.thirty_day_plan && (
                       <div className="space-y-4">
-                        <h4 className="font-bold text-xs text-[#6b5a4b] uppercase tracking-wider">Milestones & Action Items</h4>
+                        <h4 className="font-extrabold text-xs text-[#6e5845] uppercase tracking-wider">Milestones & Action Items</h4>
                         {executionResult.careerData.learning_roadmap.thirty_day_plan.map((m: any, idx: number) => (
-                          <div key={idx} className="p-4 rounded-xl bg-[#faf7f2] border border-[#e2d5c3] flex items-start gap-4 shadow-sm">
-                            <div className="w-9 h-9 rounded-xl bg-[#fee2e2]/60 border border-[#f5b5b0] flex items-center justify-center font-black text-[#b83227] text-xs shrink-0">
+                          <div key={idx} className="p-4 rounded-xl bg-[#ede2d2] border border-[#caba9c] flex items-start gap-4 shadow-sm">
+                            <div className="w-9 h-9 rounded-xl bg-[#f5dcd8] border border-[#e8b5ae] flex items-center justify-center font-black text-[#8b1e16] text-xs shrink-0">
                               W{idx + 1}
                             </div>
                             <div className="space-y-1.5 flex-1">
-                              <h5 className="font-bold text-sm text-[#2c221a]">{m.title}</h5>
+                              <h5 className="font-extrabold text-sm text-[#241810]">{m.title}</h5>
                               {m.action_items && (
-                                <ul className="space-y-1 text-xs text-[#6b5a4b]">
+                                <ul className="space-y-1 text-xs text-[#6e5845] font-medium">
                                   {m.action_items.map((item: string, i: number) => (
                                     <li key={i} className="flex items-center gap-2">
-                                      <span className="text-[#b83227]">•</span> {item}
+                                      <span className="text-[#8b1e16] font-bold">•</span> {item}
                                     </li>
                                   ))}
                                 </ul>
@@ -825,8 +825,8 @@ export default function AGENTXProductionDashboard() {
                     )}
                   </>
                 ) : (
-                  <div className="text-center py-12 text-[#6b5a4b] text-sm">
-                    No learning roadmap generated yet. Click <span className="text-[#b83227] font-semibold">"Run AI Analysis & Autonomous Pipeline"</span> above to generate a 30-day curriculum based on your job description.
+                  <div className="text-center py-12 text-[#6e5845] text-sm font-semibold">
+                    No learning roadmap generated yet. Click <span className="text-[#8b1e16] font-extrabold">"Run AI Analysis & Autonomous Pipeline"</span> above to generate a 30-day curriculum based on your job description.
                   </div>
                 )}
               </div>
@@ -834,43 +834,43 @@ export default function AGENTXProductionDashboard() {
 
             {/* TAB 5: INTERVIEW */}
             {activeTab === 'interview' && (
-              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#e2d5c3]">
-                <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-[#e2d5c3] pb-4 gap-4">
+              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#caba9c]">
+                <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-[#caba9c] pb-4 gap-4">
                   <div>
-                    <h3 className="font-bold text-lg text-[#2c221a]">STAR Practice Studio & Dynamic Question Bank</h3>
-                    <p className="text-xs text-[#6b5a4b]">
+                    <h3 className="font-extrabold text-lg text-[#241810]">STAR Practice Studio & Dynamic Question Bank</h3>
+                    <p className="text-xs text-[#6e5845] font-medium">
                       40 Tailored Questions (Top 20 Resume-Based + Top 20 HR & Behavioral) generated dynamically for candidate credentials
                     </p>
                   </div>
 
                   {/* Question Filter Buttons */}
-                  <div className="flex flex-wrap items-center gap-2 bg-[#f2ede4] p-1.5 rounded-xl border border-[#d8c8b0] self-start md:self-auto">
+                  <div className="flex flex-wrap items-center gap-2 bg-[#dfcfb9] p-1.5 rounded-xl border border-[#c5b196] self-start md:self-auto shadow-inner">
                     <button
                       onClick={() => setInterviewFilter('all')}
-                      className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                      className={`px-3 py-1.5 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
                         interviewFilter === 'all'
-                          ? 'bg-[#b83227] text-white shadow-md'
-                          : 'text-[#6b5a4b] hover:text-[#2c221a]'
+                          ? 'bg-[#8b1e16] text-white shadow-md'
+                          : 'text-[#4e3d30] hover:text-[#241810]'
                       }`}
                     >
                       All Questions ({executionResult?.interviewData?.length || 40})
                     </button>
                     <button
                       onClick={() => setInterviewFilter('resume_based')}
-                      className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                      className={`px-3 py-1.5 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
                         interviewFilter === 'resume_based'
-                          ? 'bg-[#b83227] text-white shadow-md'
-                          : 'text-[#6b5a4b] hover:text-[#2c221a]'
+                          ? 'bg-[#8b1e16] text-white shadow-md'
+                          : 'text-[#4e3d30] hover:text-[#241810]'
                       }`}
                     >
                       Resume-Based (Top 20)
                     </button>
                     <button
                       onClick={() => setInterviewFilter('hr_based')}
-                      className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                      className={`px-3 py-1.5 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
                         interviewFilter === 'hr_based'
-                          ? 'bg-[#8c7355] text-white shadow-md'
-                          : 'text-[#6b5a4b] hover:text-[#2c221a]'
+                          ? 'bg-[#5c4735] text-white shadow-md'
+                          : 'text-[#4e3d30] hover:text-[#241810]'
                       }`}
                     >
                       HR & Behavioral (Top 20)
@@ -889,8 +889,8 @@ export default function AGENTXProductionDashboard() {
 
                     if (filteredQuestions.length === 0 && allQuestions.length === 0) {
                       return (
-                        <div className="text-center py-12 text-[#6b5a4b] text-sm">
-                          No interview questions generated yet. Click <span className="text-[#b83227] font-semibold">"Run AI Analysis & Autonomous Pipeline"</span> above to analyze candidate credentials.
+                        <div className="text-center py-12 text-[#6e5845] text-sm font-semibold">
+                          No interview questions generated yet. Click <span className="text-[#8b1e16] font-extrabold">"Run AI Analysis & Autonomous Pipeline"</span> above to analyze candidate credentials.
                         </div>
                       );
                     }
@@ -898,40 +898,40 @@ export default function AGENTXProductionDashboard() {
                     return filteredQuestions.map((q: any, idx: number) => {
                       const isResumeBased = q.question_type === 'resume_based' || q.id?.startsWith('q-res');
                       return (
-                        <div key={q.id || idx} className="p-5 rounded-xl bg-[#faf7f2] border border-[#e2d5c3] space-y-3 shadow-sm hover:border-[#b83227] transition-all">
+                        <div key={q.id || idx} className="p-5 rounded-xl bg-[#ede2d2] border border-[#caba9c] space-y-3 shadow-sm hover:border-[#8b1e16] transition-all">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                              <span className={`px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider ${
+                              <span className={`px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider shadow-sm ${
                                 isResumeBased
-                                  ? 'bg-[#fee2e2]/80 text-[#9e2419] border border-[#f5b5b0]'
-                                  : 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                                  ? 'bg-[#f5dcd8] text-[#8b1e16] border border-[#e8b5ae]'
+                                  : 'bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6]'
                               }`}>
                                 {isResumeBased ? 'Resume-Based Technical' : 'HR & Behavioral'}
                               </span>
-                              <span className="px-2.5 py-1 rounded-lg bg-[#f2ede4] text-[#5c4936] border border-[#d8c8b0] text-[10px] font-semibold">
+                              <span className="px-2.5 py-1 rounded-lg bg-[#dfcfb9] text-[#4e3d30] border border-[#c5b196] text-[10px] font-bold">
                                 {q.category || 'Interview Focus'}
                               </span>
                             </div>
-                            <span className="text-xs text-[#6b5a4b] font-medium">Question #{idx + 1} of {filteredQuestions.length}</span>
+                            <span className="text-xs text-[#6e5845] font-bold">Question #{idx + 1} of {filteredQuestions.length}</span>
                           </div>
-                          <h4 className="font-bold text-sm sm:text-base text-[#2c221a] leading-snug">
+                          <h4 className="font-extrabold text-sm sm:text-base text-[#241810] leading-snug">
                             {q.question_text || q.question || 'Interview practice question'}
                           </h4>
                           {(q.context_reason || q.context) && (
-                            <p className="text-xs text-[#5c4936] bg-[#f2ede4]/80 p-3 rounded-lg border border-[#d8c8b0]">
-                              <span className="text-[#b83227] font-semibold">Evaluation Focus: </span>
+                            <p className="text-xs text-[#4e3d30] bg-[#dfcfb9]/70 p-3 rounded-lg border border-[#c5b196] font-medium">
+                              <span className="text-[#8b1e16] font-extrabold">Evaluation Focus: </span>
                               {q.context_reason || q.context}
                             </p>
                           )}
                           {q.star_talking_points && q.star_talking_points.length > 0 && (
                             <div className="pt-2">
-                              <span className="text-[11px] font-bold text-[#b83227] uppercase tracking-wider block mb-1.5">
+                              <span className="text-[11px] font-extrabold text-[#8b1e16] uppercase tracking-wider block mb-1.5">
                                 Recommended STAR Talking Points:
                               </span>
-                              <ul className="space-y-1 text-xs text-[#2c221a]">
+                              <ul className="space-y-1 text-xs text-[#241810] font-medium">
                                 {q.star_talking_points.map((tp: string, i: number) => (
                                   <li key={i} className="flex items-start gap-2">
-                                    <span className="text-[#b83227] mt-0.5">•</span> <span>{tp}</span>
+                                    <span className="text-[#8b1e16] font-bold">•</span> <span>{tp}</span>
                                   </li>
                                 ))}
                               </ul>
@@ -947,15 +947,15 @@ export default function AGENTXProductionDashboard() {
 
             {/* TAB 6: AGENTS */}
             {activeTab === 'agents' && (
-              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#e2d5c3]">
-                <div className="flex items-center justify-between border-b border-[#e2d5c3] pb-4">
+              <div className="rounded-2xl parchment-card p-6 space-y-6 shadow-md border border-[#caba9c]">
+                <div className="flex items-center justify-between border-b border-[#caba9c] pb-4">
                   <div>
-                    <h3 className="font-bold text-lg text-[#2c221a]">Multi-Agent Execution Trace Graph</h3>
-                    <p className="text-xs text-[#6b5a4b]">
+                    <h3 className="font-extrabold text-lg text-[#241810]">Multi-Agent Execution Trace Graph</h3>
+                    <p className="text-xs text-[#6e5845] font-semibold">
                       Session ID: {executionResult?.orchestrationData?.session_id || 'sess-live-9912'}
                     </p>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6] text-xs font-extrabold shadow-sm">
                     6/6 Autonomous Agents Completed
                   </span>
                 </div>
@@ -969,20 +969,20 @@ export default function AGENTXProductionDashboard() {
                     { agent_name: 'RecommendationAgent', status: 'completed', execution_time_ms: 52, tool_calls: ['generate_roadmap'] },
                     { agent_name: 'InterviewAgent', status: 'completed', execution_time_ms: 41, tool_calls: ['generate_interview_questions'] },
                   ]).map((step: any, idx: number) => (
-                    <div key={idx} className="p-4 rounded-xl bg-[#faf7f2] border border-[#e2d5c3] space-y-3 shadow-sm">
+                    <div key={idx} className="p-4 rounded-xl bg-[#ede2d2] border border-[#caba9c] space-y-3 shadow-sm">
                       <div className="flex items-center justify-between">
-                        <span className="font-bold text-xs text-[#2c221a]">{step.agent_name}</span>
-                        <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 text-[10px] font-extrabold uppercase">
+                        <span className="font-extrabold text-xs text-[#241810]">{step.agent_name}</span>
+                        <span className="px-2 py-0.5 rounded bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6] text-[10px] font-extrabold uppercase">
                           {step.status}
                         </span>
                       </div>
-                      <div className="text-[11px] text-[#6b5a4b]">
-                        Execution latency: <span className="text-[#b83227] font-medium">{step.execution_time_ms} ms</span>
+                      <div className="text-[11px] text-[#6e5845] font-semibold">
+                        Execution latency: <span className="text-[#8b1e16] font-bold">{step.execution_time_ms} ms</span>
                       </div>
                       {step.tool_calls && (
                         <div className="flex flex-wrap gap-1.5 pt-1">
                           {step.tool_calls.map((t: string, i: number) => (
-                            <span key={i} className="px-2 py-0.5 rounded bg-[#f2ede4] text-[#5c4936] border border-[#d8c8b0] text-[10px] font-mono">
+                            <span key={i} className="px-2 py-0.5 rounded bg-[#dfcfb9] text-[#4e3d30] border border-[#c5b196] text-[10px] font-mono font-bold">
                               {t}
                             </span>
                           ))}
