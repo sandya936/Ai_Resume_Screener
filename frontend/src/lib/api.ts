@@ -1,4 +1,11 @@
-const API_BASE = 'http://localhost:8000/api/v1';
+const getApiBase = () => {
+  const envUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  if (!envUrl) return 'https://ai-resume-screener-26ke.onrender.com/api/v1';
+  const cleanUrl = envUrl.replace(/\/$/, '');
+  return cleanUrl.endsWith('/api/v1') ? cleanUrl : `${cleanUrl}/api/v1`;
+};
+
+const API_BASE = getApiBase();
 
 let cachedToken: string | null = null;
 
