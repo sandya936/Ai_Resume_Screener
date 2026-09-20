@@ -41,6 +41,8 @@ import {
   User,
   LogOut,
   LogIn,
+  Moon,
+  Sun,
 } from 'lucide-react';
 import {
   uploadResumeFile,
@@ -97,8 +99,18 @@ export default function AGENTXProductionDashboard() {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState<any | null>(null);
   const [isAuthChecked, setIsAuthChecked] = useState<boolean>(false);
+  const [theme, setTheme] = useState<'parchment' | 'dark'>('parchment');
 
   useEffect(() => {
+    // Check saved theme
+    const savedTheme = localStorage.getItem('agentx_theme') as 'parchment' | 'dark' | null;
+    if (savedTheme === 'dark' || savedTheme === 'parchment') {
+      setTheme(savedTheme);
+      document.body.className = `theme-${savedTheme}`;
+    } else {
+      document.body.className = 'theme-parchment';
+    }
+
     // Check saved user session
     const token = getSavedToken();
     const u = getSavedUser();
@@ -117,6 +129,13 @@ export default function AGENTXProductionDashboard() {
       .then(() => setBackendOnline(true))
       .catch(() => setBackendOnline(true));
   }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'parchment' ? 'dark' : 'parchment';
+    setTheme(nextTheme);
+    localStorage.setItem('agentx_theme', nextTheme);
+    document.body.className = `theme-${nextTheme}`;
+  };
 
   const handleLogout = () => {
     clearAuthSession();
@@ -223,48 +242,95 @@ export default function AGENTXProductionDashboard() {
     }
   };
 
+  const isDark = theme === 'dark';
+
   return (
-    <div className="min-h-screen bg-[#ebdcc6] text-[#241810] flex flex-col selection:bg-[#8b1e16] selection:text-white">
+    <div className={`min-h-screen flex flex-col ${
+      isDark ? 'bg-[#030712] text-slate-100 selection:bg-indigo-500' : 'bg-[#ebdcc6] text-[#241810] selection:bg-[#8b1e16]'
+    } selection:text-white transition-colors duration-300`}>
       {/* Navbar Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#e8dac5]/90 border-b border-[#caba9c] px-6 py-4 shadow-sm">
+      <header className={`sticky top-0 z-50 backdrop-blur-xl border-b px-6 py-4 shadow-sm transition-colors duration-300 ${
+        isDark ? 'bg-slate-950/90 border-slate-800' : 'bg-[#e8dac5]/90 border-[#caba9c]'
+      }`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8b1e16] via-[#d4af37] to-[#8c7355] p-[1px] flex items-center justify-center shadow-md shadow-red-950/20">
-              <div className="w-full h-full bg-[#f5ece0] rounded-[11px] flex items-center justify-center">
-                <Bot className="w-5 h-5 text-[#8b1e16] animate-pulse" />
+            <div className={`w-10 h-10 rounded-xl p-[1px] flex items-center justify-center shadow-md ${
+              isDark
+                ? 'bg-gradient-to-tr from-indigo-600 via-violet-600 to-cyan-400 shadow-indigo-500/25'
+                : 'bg-gradient-to-br from-[#8b1e16] via-[#d4af37] to-[#8c7355] shadow-red-950/20'
+            }`}>
+              <div className={`w-full h-full rounded-[11px] flex items-center justify-center ${
+                isDark ? 'bg-slate-950' : 'bg-[#f5ece0]'
+              }`}>
+                <Bot className={`w-5 h-5 animate-pulse ${isDark ? 'text-cyan-400' : 'text-[#8b1e16]'}`} />
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="font-extrabold text-xl tracking-tight text-[#241810]">
-                  AGENT<span className="text-[#8b1e16]">X</span>
+                <h1 className={`font-extrabold text-xl tracking-tight ${isDark ? 'text-white' : 'text-[#241810]'}`}>
+                  AGENT<span className={isDark ? 'text-cyan-400' : 'text-[#8b1e16]'}>X</span>
                 </h1>
-                <span className="px-2.5 py-0.5 text-[10px] font-bold bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6] rounded-full flex items-center gap-1.5 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1c5427] animate-ping" />
+                <span className={`px-2.5 py-0.5 text-[10px] font-bold rounded-full flex items-center gap-1.5 shadow-sm ${
+                  isDark
+                    ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                    : 'bg-[#dcecd8] text-[#1c5427] border border-[#a8d4a6]'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full animate-ping ${isDark ? 'bg-emerald-400' : 'bg-[#1c5427]'}`} />
                   Live Engine Active
                 </span>
               </div>
-              <p className="text-xs text-[#6e5845]">AI Resume Intelligence & Autonomous Career Platform</p>
+              <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-[#6e5845]'}`}>AI Resume Intelligence & Autonomous Career Platform</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#dfcfb9] border border-[#c5b196] text-xs">
-              <span className="w-2 h-2 rounded-full bg-[#1c5427]" />
-              <span className="text-[#4e3d30] font-bold">FastAPI Service Online (Port 8000)</span>
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              type="button"
+              className={`px-3 py-1.5 rounded-xl text-xs font-extrabold flex items-center gap-2 border shadow-sm transition-all cursor-pointer ${
+                isDark
+                  ? 'bg-slate-900 hover:bg-slate-800 text-cyan-300 border-slate-700'
+                  : 'bg-[#dfcfb9] hover:bg-[#d4c3ab] text-[#4e3d30] border-[#c5b196]'
+              }`}
+            >
+              {isDark ? (
+                <>
+                  <Moon className="w-4 h-4 text-cyan-400" />
+                  <span className="hidden sm:inline">🌙 Dark Slate UI</span>
+                </>
+              ) : (
+                <>
+                  <Sun className="w-4 h-4 text-[#8b1e16]" />
+                  <span className="hidden sm:inline">📜 Warm Crimson Theme</span>
+                </>
+              )}
+            </button>
+
+            <div className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border ${
+              isDark ? 'bg-slate-900 border-slate-800 text-slate-300' : 'bg-[#dfcfb9] border-[#c5b196] text-[#4e3d30]'
+            }`}>
+              <span className={`w-2 h-2 rounded-full ${isDark ? 'bg-emerald-400' : 'bg-[#1c5427]'}`} />
+              <span>FastAPI Service Online (Port 8000)</span>
             </div>
 
             {currentUser && (
-              <div className="flex items-center gap-2 bg-[#f5ece0] border border-[#caba9c] pl-3 pr-2 py-1.5 rounded-xl text-xs shadow-sm">
-                <User className="w-4 h-4 text-[#8b1e16]" />
-                <span className="font-bold text-[#241810] hidden sm:inline">
+              <div className={`flex items-center gap-2 pl-3 pr-2 py-1.5 rounded-xl text-xs shadow-sm border ${
+                isDark ? 'bg-slate-900 border-slate-800 text-white' : 'bg-[#f5ece0] border-[#caba9c] text-[#241810]'
+              }`}>
+                <User className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-[#8b1e16]'}`} />
+                <span className="font-bold hidden sm:inline">
                   {currentUser.full_name || currentUser.email}
                 </span>
                 <button
                   type="button"
                   onClick={handleLogout}
                   title="Sign Out of Workspace"
-                  className="flex items-center gap-1.5 px-2.5 py-1 bg-[#f5dcd8] hover:bg-[#ebd0cc] text-[#8b1e16] border border-[#e8b5ae] rounded-lg transition-all text-xs font-bold ml-1 cursor-pointer"
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg transition-all text-xs font-bold ml-1 cursor-pointer border ${
+                    isDark
+                      ? 'bg-red-500/10 hover:bg-red-500/20 text-red-400 border-red-500/30'
+                      : 'bg-[#f5dcd8] hover:bg-[#ebd0cc] text-[#8b1e16] border-[#e8b5ae]'
+                  }`}
                 >
                   <LogOut className="w-3.5 h-3.5" />
                   <span>Logout</span>
@@ -998,6 +1064,20 @@ export default function AGENTXProductionDashboard() {
         </section>
 
       </main>
+
+      {/* Footer */}
+      <footer className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-xs font-semibold flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 border-t ${
+        isDark ? 'text-slate-500 border-slate-900' : 'text-[#6e5845] border-[#caba9c]'
+      }`}>
+        <div>
+          © 2026 AGENTX AI Platform. All rights reserved. Powered by Sandya Kaki & FastAPI Architecture.
+        </div>
+        <div className="flex items-center gap-6 font-bold">
+          <a href="#" className={`transition-colors ${isDark ? 'hover:text-slate-300' : 'hover:text-[#8b1e16]'}`}>Privacy Policy</a>
+          <a href="#" className={`transition-colors ${isDark ? 'hover:text-slate-300' : 'hover:text-[#8b1e16]'}`}>Terms of Service</a>
+          <a href="#" className={`transition-colors ${isDark ? 'hover:text-slate-300' : 'hover:text-[#8b1e16]'}`}>Documentation</a>
+        </div>
+      </footer>
     </div>
   );
 }

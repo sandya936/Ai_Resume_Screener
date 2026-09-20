@@ -2,19 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    background-color: #ebdcc6;
-    color: #241810;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(212, 175, 120, 0.35) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(139, 30, 22, 0.12) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.065 0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    @apply antialiased;
-  }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  @apply antialiased transition-colors duration-300;
+}
+
+body.theme-parchment {
+  background-color: #ebdcc6;
+  color: #241810;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 120, 0.35) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 30, 22, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.065 0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+body.theme-dark {
+  background-color: #030712;
+  color: #f3f4f6;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.22) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.18) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(147, 51, 234, 0.12) 0px, transparent 50%);
+  background-attachment: fixed;
 }
 
 /* Custom Scrollbar */
@@ -24,33 +35,54 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #dfcfb9;
+  background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b5a289;
+  background: #475569;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8e7960;
+  background: #64748b;
 }
 
-/* Parchment Paper Texture & Glass Utilities */
+/* Parchment Paper & Dark Card Utilities */
 .glass-card, .parchment-card {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.theme-parchment .glass-card,
+body.theme-parchment .parchment-card {
   background: #f5ece0;
   backdrop-filter: blur(16px);
   border: 1px solid #d4c2a8;
   box-shadow: 0 4px 20px -2px rgba(60, 40, 20, 0.10);
 }
 
+body.theme-dark .glass-card,
+body.theme-dark .parchment-card {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.5);
+}
+
 .glass-card-hover, .parchment-card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.glass-card-hover:hover, .parchment-card-hover:hover {
+body.theme-parchment .glass-card-hover:hover, 
+body.theme-parchment .parchment-card-hover:hover {
   border-color: #8b1e16;
   box-shadow: 0 12px 32px -6px rgba(139, 30, 22, 0.22);
+  transform: translateY(-2px);
+}
+
+body.theme-dark .glass-card-hover:hover, 
+body.theme-dark .parchment-card-hover:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 12px 32px -6px rgba(99, 102, 241, 0.25);
   transform: translateY(-2px);
 }
 
@@ -62,8 +94,8 @@
   box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.4);
 }
 
-.glow-forest {
-  box-shadow: 0 0 25px -5px rgba(28, 84, 39, 0.35);
+.glow-indigo {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.4);
 }
 
 @keyframes float {
@@ -74,4 +106,3 @@
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
-
